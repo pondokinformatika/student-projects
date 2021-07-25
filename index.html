@@ -13,7 +13,9 @@
 
 		<template x-for="student in students">
 			<section class="mb-12 p-8 rounded-xl shadow-xl bg-white">
-				<h2 x-text="student.name" class="capitalize text-xl font-semibold"></h2>
+				<a :href="student.name + '/index.html'" class="block">
+					<h2 x-text="student.name" class="capitalize text-xl font-semibold"></h2>
+				</a>
 
 				<div class="grid lg:grid-cols-4 gap-6 mt-8">
 					<template x-for="project in student.projects">
@@ -23,7 +25,6 @@
 						</a>
 					</template>
 				</div>
-
 			</section>		
 		</template>
 
