@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Projects | Pondok Informatika Al-Madinah</title>
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-blue-400 w-full h-full">
+	<div class="container mx-auto px-4" x-data="main">
+		<h1 class="text-white text-3xl text-center font-bold mt-8 mb-16 leading-normal">
+			Student Projects<br>
+			<span class="text-2xl">Pondok Informatika Al-Madinah</span>
+		</h1>
+
+		<template x-for="student in students">
+			<section class="mb-12 p-8 rounded-xl shadow-xl bg-white">
+				<h2 x-text="student.name" class="capitalize text-xl font-semibold"></h2>
+
+				<div class="grid lg:grid-cols-4 gap-6 mt-8">
+					<template x-for="project in student.projects">
+						<a :href="student.name + '/' + project.path" class="block">
+							<img :src="project.image" class="w-full h-32 mb-2 rounded-lg shadow-lg">
+							<p x-text="project.name" class="text-center"></p>
+						</a>
+					</template>
+				</div>
+
+			</section>		
+		</template>
+
+	</div>
+
+	<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+	<script src="script.js"></script>
+</body>
+</html>
