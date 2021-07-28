@@ -26,9 +26,8 @@ document.addEventListener('alpine:init', () => {
 			],
 		}
 
-		const isLocal = window.location.href.split('://')[0] === 'file'
 		const paths = window.location.pathname.split('/')
-		const dirName = paths[paths.length - (isLocal ? 2 : 1)]
+		const dirName = paths[paths.length - 2]
 		const studentDetail = data.students.find(student => student.name === dirName)
 		const dataFiltered = studentDetail || data
 
